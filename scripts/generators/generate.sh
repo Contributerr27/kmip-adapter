@@ -160,7 +160,7 @@ generate_enum() {
     local GEN_CLASS=false GEN_JSON_SER=false GEN_JSON_DES=false GEN_XML_SER=false GEN_XML_DES=false
     local GEN_TTLV_SER=false GEN_TTLV_DES=false GEN_DOMAIN_TEST=false GEN_JSON_TEST=false GEN_XML_TEST=false
     local GEN_TTLV_TEST=false GEN_BENCHMARK=false
-    local DRY_RUN="${DRY_RUN:-false}"
+    local DRY_RUN=false
     local IF_ATTR=false
     local module="core"
     local sub_package=""
@@ -284,7 +284,7 @@ generate_datatype() {
     local GEN_CLASS=false GEN_JSON_SER=false GEN_JSON_DES=false GEN_XML_SER=false GEN_XML_DES=false
     local GEN_TTLV_SER=false GEN_TTLV_DES=false GEN_DOMAIN_TEST=false GEN_JSON_TEST=false GEN_XML_TEST=false
     local GEN_TTLV_TEST=false GEN_BENCHMARK=false
-    local DRY_RUN="${DRY_RUN:-false}"
+    local DRY_RUN=false
     local DATA_TYPE="ByteBuffer"
     local IF_ATTR=false
     local module="core"
@@ -422,7 +422,7 @@ generate_structure() {
     local GEN_CLASS=false GEN_JSON_SER=false GEN_JSON_DES=false GEN_XML_SER=false GEN_XML_DES=false
     local GEN_TTLV_SER=false GEN_TTLV_DES=false GEN_DOMAIN_TEST=false GEN_JSON_TEST=false GEN_XML_TEST=false
     local GEN_TTLV_TEST=false GEN_BENCHMARK=false
-    local DRY_RUN="${DRY_RUN:-false}"
+    local DRY_RUN=false
     local IF_ATTR=false
     local module="core"
     local sub_package=""
