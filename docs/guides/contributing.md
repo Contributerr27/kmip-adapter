@@ -10,7 +10,7 @@
 ## Workflow
 
 ```bash
-git clone https://github.com/purplebean/kmip-adapter.git
+git clone https://github.com/appmonster007/kmip-adapter.git
 cd kmip-adapter
 git checkout -b feature/<short-name> develop
 mvn test                       # must pass, checkstyle included

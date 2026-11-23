@@ -44,3 +44,4 @@ build/
 .mcp.json
 *.log
 *.diff
+dependency-reduced-pom.xml

@@ -1,6 +1,7 @@
 # KMIP Adapter
 
 [![Java 21](https://img.shields.io/badge/Java-21-orange.svg)](https://openjdk.org/projects/jdk/21/)
+[![CI](https://github.com/appmonster007/kmip-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/appmonster007/kmip-adapter/actions/workflows/ci.yml)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](LICENSE)
 
 A Java 21 library of typed [KMIP](https://docs.oasis-open.org/kmip/spec/) data types (enumerations,
