@@ -2,6 +2,7 @@ package org.purplebean.kmip.spi;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.lang.reflect.Modifier;
@@ -30,6 +31,7 @@ import org.purplebean.kmip.codec.xml.serializer.api.KmipDataTypeXmlSerializer;
  */
 class SpiRegistrationAuditTest {
 
+  // Only the interfaces listed here are audited: add new service interfaces to this list.
   private static final List<Class<?>> SERVICES =
       List.of(
           KmipDataType.class,
@@ -54,6 +56,8 @@ class SpiRegistrationAuditTest {
           mainClasses.stream()
               .filter(c -> service.isAssignableFrom(c) && c != service)
               .filter(c -> !c.isInterface() && !Modifier.isAbstract(c.getModifiers()))
+              // Member, anonymous and local classes are excluded on purpose: the audit targets
+              // top-level service providers.
               .filter(c -> !c.isAnonymousClass() && !c.isMemberClass() && !c.isLocalClass())
               .map(Class::getName)
               .collect(Collectors.toCollection(TreeSet::new));
@@ -92,7 +96,7 @@ class SpiRegistrationAuditTest {
           .filter(p -> p.toString().endsWith(".class"))
           .map(p -> root.relativize(p).toString())
           .filter(n -> !n.contains("module-info") && !n.contains("package-info"))
-          .map(n -> n.substring(0, n.length() - ".class".length()).replace('/', '.'))
+          .map(n -> n.substring(0, n.length() - ".class".length()).replace(File.separatorChar, '.'))
           .map(SpiRegistrationAuditTest::load)
           .collect(Collectors.toList());
     } catch (IOException e) {
